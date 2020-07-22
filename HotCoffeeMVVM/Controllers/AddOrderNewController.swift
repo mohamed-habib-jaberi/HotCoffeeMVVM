@@ -53,5 +53,13 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+           print("Row \(indexPath.row) selected")
+       }
+       func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+           tableView.cellForRow(at: indexPath)?.accessoryType = .none
+           print("Row \(indexPath.row) selected")
+       }
     
 }

@@ -69,6 +69,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hCJ-wq-9T4">
                                 <rect key="frame" x="0.0" y="56" width="414" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoffeeTypeTableViewCell" id="lqD-XB-65m">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lqD-XB-65m" id="Jc8-y2-8gs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FfD-js-oFe" id="xSK-qm-qV2"/>
+                                    <outlet property="delegate" destination="FfD-js-oFe" id="wzE-kd-SoJ"/>
+                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-FV-A98">
                                 <rect key="frame" x="50.5" y="528" width="313" height="41"/>
@@ -121,6 +135,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Close" id="Khc-AE-2go"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="7dA-OV-vPc"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="TTe-xN-iyH" id="oXz-DM-aAS"/>
+                        <outlet property="nameTextField" destination="tjo-Ni-P9q" id="C5j-p8-Tie"/>
+                        <outlet property="tableView" destination="hCJ-wq-9T4" id="eoD-eu-OGy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VF-Ec-42P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

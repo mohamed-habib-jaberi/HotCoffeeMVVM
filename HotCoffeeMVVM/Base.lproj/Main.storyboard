@@ -84,19 +84,6 @@
                                     <outlet property="delegate" destination="FfD-js-oFe" id="wzE-kd-SoJ"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-FV-A98">
-                                <rect key="frame" x="50.5" y="528" width="313" height="41"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="313" id="2H9-Iz-rYz"/>
-                                    <constraint firstAttribute="height" constant="40" id="UtH-hJ-cJO"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Meduim"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjo-Ni-P9q">
                                 <rect key="frame" x="50.5" y="629" width="313" height="34"/>
                                 <constraints>
@@ -120,13 +107,11 @@
                         <constraints>
                             <constraint firstItem="hCJ-wq-9T4" firstAttribute="height" secondItem="FpJ-Yl-yYk" secondAttribute="height" multiplier="0.5" id="62H-qC-1yU"/>
                             <constraint firstItem="hCJ-wq-9T4" firstAttribute="width" secondItem="FpJ-Yl-yYk" secondAttribute="width" multiplier="1:1" id="B5a-7d-XDz"/>
-                            <constraint firstItem="tjo-Ni-P9q" firstAttribute="top" secondItem="bWE-FV-A98" secondAttribute="bottom" constant="61" id="PBM-vX-3z6"/>
                             <constraint firstItem="TTe-xN-iyH" firstAttribute="top" secondItem="tjo-Ni-P9q" secondAttribute="bottom" constant="20" id="PMF-6u-nUn"/>
                             <constraint firstItem="hCJ-wq-9T4" firstAttribute="top" secondItem="yC2-Bg-oGl" secondAttribute="top" id="TeL-zB-MVt"/>
-                            <constraint firstItem="bWE-FV-A98" firstAttribute="centerX" secondItem="FpJ-Yl-yYk" secondAttribute="centerX" id="WEx-0U-mGg"/>
-                            <constraint firstItem="bWE-FV-A98" firstAttribute="top" secondItem="hCJ-wq-9T4" secondAttribute="bottom" constant="51" id="aTT-Mp-P0J"/>
                             <constraint firstItem="TTe-xN-iyH" firstAttribute="centerX" secondItem="FpJ-Yl-yYk" secondAttribute="centerX" id="asF-iY-5HO"/>
                             <constraint firstItem="hCJ-wq-9T4" firstAttribute="leading" secondItem="yC2-Bg-oGl" secondAttribute="leading" id="jgq-bs-Dn0"/>
+                            <constraint firstItem="yC2-Bg-oGl" firstAttribute="bottom" secondItem="TTe-xN-iyH" secondAttribute="bottom" constant="91" id="nsu-Hb-wpj"/>
                             <constraint firstItem="tjo-Ni-P9q" firstAttribute="centerX" secondItem="FpJ-Yl-yYk" secondAttribute="centerX" id="zhC-B3-8St"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yC2-Bg-oGl"/>

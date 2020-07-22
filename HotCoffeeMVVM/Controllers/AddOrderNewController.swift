@@ -17,14 +17,27 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private var vm = AddCoffeeOrderViewModel()
     
+    private var coffeeSizeSegmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //        self.tableView.delegate = self
         //        self.tableView.dataSource = self
         
+        setupUI()
     }
     
+    //MARK: Add SegmentedControl Progmatically
+    
+    private func setupUI(){
+        self.coffeeSizeSegmentedControl = UISegmentedControl(items: self.vm.sizes)
+        self.coffeeSizeSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.coffeeSizeSegmentedControl)
+        self.coffeeSizeSegmentedControl.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20).isActive = true
+        self.coffeeSizeSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+    }
     //MARK: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,5 +53,5 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
- 
+    
 }

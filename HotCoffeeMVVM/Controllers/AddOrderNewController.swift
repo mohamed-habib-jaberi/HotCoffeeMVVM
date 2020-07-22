@@ -62,4 +62,22 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
            print("Row \(indexPath.row) selected")
        }
     
+    //MARK: Action
+    @IBAction func save(){
+        
+        let name = self.nameTextField.text
+              let email = self.emailTextField.text
+        
+        let selectedSize = self.coffeeSizeSegmentedControl.titleForSegment(at: self.coffeeSizeSegmentedControl.selectedSegmentIndex)
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
+        fatalError("Error in selecting coffee")}
+    
+        // Asign to VM to Populate Order
+        self.vm.name = name
+        self.vm.email = email
+        self.vm.selectedSize = selectedSize
+        self.vm.selectedType = self.vm.types[indexPath.row]
+    }
+    
 }

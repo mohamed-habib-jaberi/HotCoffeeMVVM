@@ -118,7 +118,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="7gO-9o-7Kz">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="Khc-AE-2go"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="7dA-OV-vPc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7dA-OV-vPc">
+                            <connections>
+                                <action selector="save" destination="FfD-js-oFe" id="aAg-e2-3Rv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="TTe-xN-iyH" id="oXz-DM-aAS"/>

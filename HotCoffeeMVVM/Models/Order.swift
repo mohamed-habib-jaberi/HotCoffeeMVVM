@@ -48,3 +48,31 @@ extension Order {
         self.size = selectedSize
     }
 }
+
+//MARK: function to Post New Order
+
+extension Order {
+    
+  static var all: Resource<[Order]> = {
+        
+        guard  let url = URL(string: "Https://guarded-retreat-82533.herokuapp.com/orders") else {
+             fatalError("URL is incorrect")}
+        return Resource<[Order]>(url: url)
+    }()
+    
+    static func create( vm: AddCoffeeOrderViewModel) -> (Resource<Order?>){
+        
+        let order = Order(vm)
+        
+        guard  let url = URL(string: "Https://guarded-retreat-82533.herokuapp.com/orders") else {
+            fatalError("URL is incorrect")}
+        
+        guard let data = try? JSONEncoder().encode(order) else {fatalError("error encoding order!")}
+        
+        var ressource = Resource<Order?>(url: url)
+        ressource.httpMethod = HttpMethod.post
+        ressource.body = data
+        
+        return ressource
+    }
+}

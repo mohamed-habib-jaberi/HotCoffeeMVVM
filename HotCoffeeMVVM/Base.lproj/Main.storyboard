@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Order Table View Controller-->
+        <!--Orders-->
         <scene sceneID="G1w-vx-z0z">
             <objects>
                 <tableViewController id="sbF-9b-dgS" customClass="OrderTableViewController" customModule="HotCoffeeMVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="sbF-9b-dgS" id="GWs-QC-3QT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iOJ-nR-oiU">
+                    <navigationItem key="navigationItem" title="Orders" id="iOJ-nR-oiU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P4G-xt-USj">
                             <connections>
                                 <segue destination="YaW-Bc-qzC" kind="presentation" id="u86-HE-0eb"/>
@@ -103,7 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="7gO-9o-7Kz">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="Khc-AE-2go"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Acr-1d-Y75"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7dA-OV-vPc"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VF-Ec-42P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

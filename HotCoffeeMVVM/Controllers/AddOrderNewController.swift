@@ -54,30 +54,41 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-           print("Row \(indexPath.row) selected")
-       }
-       func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-           tableView.cellForRow(at: indexPath)?.accessoryType = .none
-           print("Row \(indexPath.row) selected")
-       }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        print("Row \(indexPath.row) selected")
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        print("Row \(indexPath.row) selected")
+    }
     
     //MARK: Action
     @IBAction func save(){
         
         let name = self.nameTextField.text
-              let email = self.emailTextField.text
+        let email = self.emailTextField.text
         
         let selectedSize = self.coffeeSizeSegmentedControl.titleForSegment(at: self.coffeeSizeSegmentedControl.selectedSegmentIndex)
         
         guard let indexPath = self.tableView.indexPathForSelectedRow else {
-        fatalError("Error in selecting coffee")}
-    
+            fatalError("Error in selecting coffee")}
+        
         // Asign to VM to Populate Order
         self.vm.name = name
         self.vm.email = email
         self.vm.selectedSize = selectedSize
         self.vm.selectedType = self.vm.types[indexPath.row]
+        
+        WebService().load(resource: Order.create(vm: self.vm)) { (result) in
+            
+            switch result {
+            case .success(let order):
+                print(order)
+                
+            case.failure(let error) :
+                print(error)
+            }
+        }
     }
     
 }

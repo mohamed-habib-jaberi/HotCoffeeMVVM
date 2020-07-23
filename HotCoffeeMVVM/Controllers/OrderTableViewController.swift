@@ -25,8 +25,9 @@ class OrderTableViewController: UITableViewController {
         //        guard let coffeeOrdersUrl = URL(string: "Https://guarded-retreat-82533.herokuapp.com/orders") else {
         //            fatalError("URL was not correct")
         //        }
-        // let ressource = Resource<[Order]>(url: coffeeOrdersUrl) == Order.all
-        
+        // let ressource = Resource<[Order]>(url: coffeeOrdersUrl)
+        //     <==>
+        //Order.all
         WebService().load(resource: Order.all) { [weak self](result) -> (Void) in
             
             switch result {

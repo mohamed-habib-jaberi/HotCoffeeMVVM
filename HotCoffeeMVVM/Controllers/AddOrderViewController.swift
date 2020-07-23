@@ -1,5 +1,5 @@
 //
-//  AddOrderNewController.swift
+//  AddOrderViewController.swift
 //  HotCoffeeMVVM
 //
 //  Created by mohamed  habib on 20/07/2020.
@@ -9,13 +9,21 @@
 import Foundation
 import UIKit
 
-class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+protocol AddCoffeeOrderDelegate {
+    func addOrderViewControllerDidSave(order: Order, controller: UIViewController)
+    func addOrderViewControllerDidClose(controller: UIViewController)
+}
+
+class AddOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
     private var vm = AddCoffeeOrderViewModel()
+    
+    var delegate: AddCoffeeOrderDelegate?
     
     private var coffeeSizeSegmentedControl: UISegmentedControl!
     
@@ -85,9 +93,22 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
             case .success(let order):
                 print(order)
                 
+                if let order = order, let delegate = self.delegate {
+                    DispatchQueue.main.async {
+                        delegate.addOrderViewControllerDidSave(order: order, controller: self)
+                    }
+                }
+
+                
             case.failure(let error) :
                 print(error)
             }
+        }
+    }
+    
+    @IBAction func close(){
+        if let delegate = self.delegate{
+            delegate.addOrderViewControllerDidClose(controller: self)
         }
     }
     
